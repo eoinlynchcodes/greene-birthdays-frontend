@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import axios from 'axios';
-import { useHistory } from 'react-router-dom';
+import axios from "axios";
+import { useHistory } from "react-router-dom";
 
 export const Login = () => {
   const [logindata, setLogindata] = useState({
@@ -17,16 +17,18 @@ export const Login = () => {
     });
   };
 
-  const handleSubmit = (event) => {};
+  const handleSubmit = (event) => {
+
   axios
     .post("https://greene-backend-node.herokuapp.com/login", logindata)
     .then((response) => {
-        history.push('/list')
+      history.push("/list");
       setLogindata(response.data);
     })
     .catch((error) => {
       console.log(error);
     });
+  };
   return (
     <div>
       <form onSubmit={(event) => handleSubmit(event)}>
