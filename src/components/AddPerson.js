@@ -21,7 +21,7 @@ export const AddPerson = () =>{
     const handleSubmit = (event) => {
         debugger
         event.preventDefault();
-        axios.post(`${local}/addperson`, formData)
+        axios.post(`${localURL}/addperson`, formData)
         .then(response => {
             setFormData(response.data);
         })
