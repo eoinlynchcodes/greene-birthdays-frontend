@@ -15,7 +15,7 @@ export const AddPerson = () =>{
         });
     };
 
-    const localURL = 'http://localhost:5000';
+    const localURL = 'http://localhost:3000';
     // const OnlineURL = 'https://greene-backend-node.herokuapp.com';
 
     const handleSubmit = (event) => {

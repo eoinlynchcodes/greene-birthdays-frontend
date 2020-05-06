@@ -17,14 +17,18 @@ export const Login = () => {
     });
   };
 
-  const handleSubmit = (event) => {
-  axios
-    .post("https://greene-backend-node.herokuapp.com/login", logindata)
-    .then((response) => {
-      history.push("/list");
+  const localURL = 'http://localhost:3000';
+
+
+  const handleSubmit = () => {
+debugger
+    axios.post(`${localURL}/login`, logindata)
+    .then(response => {
+      console.log(response);
       setLogindata(response.data);
+      history.push("/list");
     })
-    .catch((error) => {
+    .catch(error => {
       console.log(error);
     });
   };

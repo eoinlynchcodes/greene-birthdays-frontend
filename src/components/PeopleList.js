@@ -6,8 +6,11 @@ export const PeopleList = () => {
 
 const [ data, setData ] = useState([]);
 
+const localURL = 'http://localhost:3000';
+
+
 useEffect(() => {
-    axios.get('http://localhost:5000/familyList')
+    axios.get(`${localURL}/familyList`)
     .then(response => {
         console.log(response.data);
         setData(response.data);
