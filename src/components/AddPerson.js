@@ -15,10 +15,13 @@ export const AddPerson = () =>{
         });
     };
 
+    const localURL = 'http://localhost:5000';
+    // const OnlineURL = 'https://greene-backend-node.herokuapp.com';
+
     const handleSubmit = (event) => {
         debugger
         event.preventDefault();
-        axios.post('http://localhost:5000/addperson', formData)
+        axios.post(`${local}/addperson`, formData)
         .then(response => {
             setFormData(response.data);
         })
